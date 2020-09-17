@@ -66,6 +66,10 @@
                                         href="~/SamplePages/TestPage1.aspx"
                                         style="color:black" runat="server">
                                    TestPage1-Hello World</a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P01_DDLofArtists.aspx"
+                                        style="color:black" runat="server">
+                                   P01 Drop-down-list of Artists</a>
                             </div>
                          </li>
                          <li class="nav-item">
