@@ -70,6 +70,10 @@
                                         href="~/SamplePages/P01_DDLofArtists.aspx"
                                         style="color:black" runat="server">
                                    P01 Drop-down-list of Artists</a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P02_DDLofAlbums.aspx"
+                                        style="color:black" runat="server">
+                                   P02 Drop-down-list of Albums</a>
                             </div>
                          </li>
                          <li class="nav-item">
