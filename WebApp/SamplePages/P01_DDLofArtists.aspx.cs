@@ -16,7 +16,14 @@ namespace WebApp.SamplePages
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            // TODO: Finish this code to access selected values
+            {
+                var selectedindex = DropDownList1.SelectedIndex;
+                var selectedvalue = DropDownList1.SelectedValue;
+                var selecteditem = DropDownList1.SelectedItem;
+                MessageLabel.Text = $"SelectedIndex:{selectedindex} " +
+                                    $" SelectedValue:{selectedvalue} " +
+                                    $" SelectedItem:{selecteditem}";
+            }
         }
     }
 }
