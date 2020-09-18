@@ -13,5 +13,17 @@ namespace WebApp.SamplePages
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            {
+                var selectedindex = DropDownList1.SelectedIndex;
+                var selectedvalue = DropDownList1.SelectedValue;
+                var selecteditem = DropDownList1.SelectedItem;
+                MessageLabel.Text = $"SelectedIndex:{selectedindex} " +
+                                    $" SelectedValue:{selectedvalue} " +
+                                    $" SelectedItem:{selecteditem}";
+            }
+        }
     }
 }
