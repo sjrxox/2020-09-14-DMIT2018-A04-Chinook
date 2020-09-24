@@ -82,6 +82,10 @@
                                         href="~/SamplePages/P04_CGVofTracks.aspx"
                                         style="color:black" runat="server">
                                    P04 Custom GridView of Tracks</a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P05_DDLofArtistToCGVofAlbumsbyArtistId.aspx"
+                                        style="color:black" runat="server">
+                                   P05 DDLofArtist to CGVofAlbumsbyArtistId</a>
                             </div>
                          </li>
                          <li class="nav-item">
