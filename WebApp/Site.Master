@@ -86,6 +86,10 @@
                                         href="~/SamplePages/P05_DDLofArtistsToCGVofAlbumsbyArtistId.aspx"
                                         style="color:black" runat="server">
                                    P05 DDLofArtist to CGVofAlbumsbyArtistId</a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P06_AlbumCRUD.aspx"
+                                        style="color:black" runat="server">
+                                   P06 Album CRUD</a>
                             </div>
                          </li>
                          <li class="nav-item">
