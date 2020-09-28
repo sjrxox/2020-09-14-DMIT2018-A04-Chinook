@@ -115,5 +115,8 @@ namespace ChinookSystem.BLL
             }
         }
         #endregion
+        #region BLL Data Validation
+
+        #endregion
     }
 }
