@@ -116,7 +116,15 @@ namespace ChinookSystem.BLL
         }
         #endregion
         #region BLL Data Validation
-
+        private void DataValidation(AlbumViewModel item)
+        {
+            if (string.IsNullOrEmpty(item.AlbumTitle))
+                throw new Exception("Album title is required");
+            else if (item.AlbumTitle.Length == 160)
+                throw new Exception("Title is over 160");
+            else if (item.AlbumReleaseYear < 1950 || item.AlbumReleaseYear > DateTime.Today.Year)
+                throw new Exception(string.Format("Year {0} is invalid. Make between 1950 and {1}", item.AlbumReleaseYear, DateTime.Today.Year));
+        }
         #endregion
     }
 }
