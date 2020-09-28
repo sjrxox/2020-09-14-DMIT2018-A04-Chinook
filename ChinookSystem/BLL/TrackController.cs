@@ -32,5 +32,24 @@ namespace ChinookSystem.BLL
                 return results.ToList();
             }
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<TrackViewModel> TracksByAlbum(int albumid)
+        {
+            using (var context = new ChinookSystemContext())
+            {
+                var results = from x in context.Tracks
+                              where x.AlbumId == albumid
+                              select new TrackViewModel
+                              {
+                                  TrackName = x.Name,
+                                  TrackComposer = x.Composer,
+                                  TrackMilliseconds = x.Milliseconds,
+                                  TrackBytes = x.Bytes,
+                                  TrackUnitPrice = x.UnitPrice
+                              };
+                return results.ToList();
+            }
+        }
     }
 }
