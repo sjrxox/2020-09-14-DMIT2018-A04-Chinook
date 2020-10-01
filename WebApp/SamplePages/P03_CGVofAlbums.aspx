@@ -6,7 +6,18 @@
             <asp:CommandField ShowSelectButton="True"></asp:CommandField>
             <asp:BoundField DataField="AlbumId" HeaderText="AlbumId" SortExpression="AlbumId"></asp:BoundField>
             <asp:BoundField DataField="AlbumTitle" HeaderText="AlbumTitle" SortExpression="AlbumTitle"></asp:BoundField>
-            <asp:BoundField DataField="ArtistId" HeaderText="ArtistId" SortExpression="ArtistId"></asp:BoundField>
+
+            <asp:TemplateField HeaderText="ArtistId" SortExpression="ArtistId">
+                <EditItemTemplate>
+                    <asp:TextBox runat="server" Text='<%# Bind("ArtistId") %>' ID="TextBox1"></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource2" DataTextField="NameAndId" DataValueField="ArtistId" Enabled="false" Width="250px" selectedvalue='<%# Eval("ArtistId") %>'></asp:DropDownList>
+                    <%--Eval means read only--%>
+                    <%--<asp:Label runat="server" Text='<%# Bind("ArtistId") %>' ID="Label1"></asp:Label>--%>
+                </ItemTemplate>
+            </asp:TemplateField>
+
             <asp:BoundField DataField="AlbumReleaseYear" HeaderText="AlbumReleaseYear" SortExpression="AlbumReleaseYear"></asp:BoundField>
             <asp:BoundField DataField="AlbumReleaseLabel" HeaderText="AlbumReleaseLabel" SortExpression="AlbumReleaseLabel"></asp:BoundField>
         </Columns>
@@ -14,4 +25,5 @@
     <br /><br />
     <asp:Label ID="MessageLabel" runat="server"></asp:Label>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Albums_List" TypeName="ChinookSystem.BLL.AlbumController"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Artist_List" TypeName="ChinookSystem.BLL.ArtistController"></asp:ObjectDataSource>
 </asp:Content>
