@@ -60,10 +60,11 @@ namespace ChinookSystem.BLL
 
         //REMEMBER to add the DataKeyNames="AlbumId" 
         //attribute to your ListView so that Delete will work
-
+        
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
         public void Albums_Insert(AlbumViewModel item)
         {
+            DataValidation(item);
             using (var context = new ChinookSystemContext())
             {
                 Album info = new Album()
@@ -81,6 +82,7 @@ namespace ChinookSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Update, false)]
         public void Albums_Update(AlbumViewModel item)
         {
+            DataValidation(item);
             using (var context = new ChinookSystemContext())
             {
                 Album info = new Album()
