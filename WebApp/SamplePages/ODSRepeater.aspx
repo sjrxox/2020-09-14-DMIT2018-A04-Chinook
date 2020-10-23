@@ -23,31 +23,27 @@
         as you develop your control
         
         --%>
-    <asp:Repeater ID="Repeater1" runat="server" 
-        DataSourceID="ClientPlayListODS">
-        
-    </asp:Repeater>
 
 
     <asp:Repeater ID="ClientPlayList" runat="server" 
         DataSourceID="ClientPlayListODS"
          ItemType="ChinookSystem.VIEWMODELS.PlayListItem">
          <HeaderTemplate>
-             <h3>Client Playlists</h3>
+             <h3>Client Playlists</h3> <%--It only happens once and it shows even if you don't have any data--%>
          </HeaderTemplate>
          <ItemTemplate>
-             <h4><%# Item.Name %> (<%#Item.TrackCount %>)</h4>
+             <h4><%# Item.Name %> (<%#Item.TrackCount %>)</h4>    <%--It's the subtitle of the data set--%>
              <h5><%# Item.UserName  %></h5>
 
               <%--gridview--%>
              
              <asp:GridView ID="PlayListSongs" runat="server"
-                 DataSource="<%# Item.Songs %>" CssClass="table table-striped" BorderStyle="None" GridLines="Horizontal" PagerSettings-Mode="NumericFirstLast" PageSize="5" Width="800">
+                 DataSource="<%# Item.Songs %>" CssClass="table table-striped" BorderStyle="None" GridLines="Horizontal" PagerSettings-Mode="NumericFirstLast" PageSize="5" Width="800">  <%--Data source is from the view not the bll--%>
              </asp:GridView>
 
              <%-- ListView --%>
 
-             <%--<asp:ListView ID="PlayListSongs" runat="server"
+<%--             <asp:ListView ID="PlayListSongs" runat="server"
                  DataSource="<%# Item.Songs %>"
                  ItemType="ChinookSystem.VIEWMODELS.PlayListSong"
                  >
@@ -73,7 +69,7 @@
                       ItemType="ChinookSystem.VIEWMODELS.PlayListSong">
                      <ItemTemplate>
                          <span style="background-color:silver">
-                        <%# Item.Song %>&nbsp;&nbsp; (<%# Item.GenreName %>)
+                        <%# Item.Song %>&nbsp;&nbsp; (<%# Item.GenreName %>)    Preferred
                          </span><br />
                      </ItemTemplate>
                      <AlternatingItemTemplate>
@@ -87,7 +83,7 @@
 
              <%--<table>
                  <asp:Repeater ID="PlayListSongs" runat="server"
-                     DataSource="<%# Item.Songs %>"
+                     DataSource="<%# Item.Songs %>"  
                       ItemType="ChinookSystem.VIEWMODELS.PlayListSong">
                      <ItemTemplate>
                          <tr>
