@@ -8,6 +8,7 @@ namespace ChinookSystem.VIEWMODELS
 {
     public class SelectionList
     {
-        //copy from robbin repo
+        public int IDValueField { get; set; }
+        public string DisplayText { get; set; }
     }
 }
