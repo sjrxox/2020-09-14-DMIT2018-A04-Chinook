@@ -8,6 +8,10 @@ namespace ChinookSystem.VIEWMODELS
 {
     public class UserPlayListTrack
     {
-        //copy from robbin's repo
+        public int TrackID { get; set; }
+        public int TrackNumber { get; set; }
+        public string TrackName { get; set; }
+        public int Milliseconds { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 }
