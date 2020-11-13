@@ -49,10 +49,6 @@ namespace WebApp.SamplePages
             TracksSelectionList.DataBind();
         }
 
-        protected void PlayList_Button_Command(Object sender, System.Web.UI.WebControls.CommandEventArgs e)
-        {
-        }
-
         protected void TracksSelectionList_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             if (e.CommandName == "AddToMyPlayList")
